@@ -1,0 +1,25 @@
+.partner-list {
+  list-style: none;
+  padding: 0;
+}
+
+.partner-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.partner-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partner-item h3 {
+  margin: 0 0 10px;
+}
+
+.partner-item p {
+  margin: 0;
+} 

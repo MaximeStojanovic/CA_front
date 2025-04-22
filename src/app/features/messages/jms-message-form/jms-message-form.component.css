@@ -1,0 +1,109 @@
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.properties-container {
+  margin-top: 10px;
+}
+
+.property-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.property-inputs input {
+  flex: 1;
+}
+
+.property-inputs button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.property-inputs button:hover {
+  background-color: #138496;
+}
+
+.properties-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.property-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.property-key {
+  font-weight: bold;
+}
+
+.remove-property {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.remove-property:hover {
+  color: #c82333;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #218838;
+} 

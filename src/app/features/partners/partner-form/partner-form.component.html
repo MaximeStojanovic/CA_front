@@ -1,0 +1,50 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" #partnerForm="ngForm">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" [(ngModel)]="partner.id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alias">Alias:</label>
+      <input type="text" id="alias" name="alias" [(ngModel)]="partner.alias" required>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select id="type" name="type" [(ngModel)]="partner.type" required>
+        <option *ngFor="let type of partnerTypes" [value]="type">{{type}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="direction">Direction:</label>
+      <select id="direction" name="direction" [(ngModel)]="partner.direction" required>
+        <option *ngFor="let direction of directions" [value]="direction">{{direction}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="application">Application:</label>
+      <input type="text" id="application" name="application" [(ngModel)]="partner.application" required>
+    </div>
+
+    <div class="form-group">
+      <label for="processedFlowType">Flow Type:</label>
+      <select id="processedFlowType" name="processedFlowType" [(ngModel)]="partner.processedFlowType" required>
+        <option *ngFor="let flowType of flowTypes" [value]="flowType">{{flowType}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="partner.description" required></textarea>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!partnerForm.form.valid">
+        {{ isEdit ? 'Update Partner' : 'Add Partner' }}
+      </button>
+    </div>
+  </form>
+</div> 

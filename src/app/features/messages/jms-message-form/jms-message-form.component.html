@@ -1,0 +1,37 @@
+<div class="form-container">
+  <h2>Send JMS Message</h2>
+  <form (ngSubmit)="onSubmit()" #messageForm="ngForm">
+    <div class="form-group">
+      <label for="destination">Destination Queue:</label>
+      <input type="text" id="destination" name="destination" [(ngModel)]="message.destination" required>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Message Content:</label>
+      <textarea id="content" name="content" [(ngModel)]="message.content" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Message Properties:</label>
+      <div class="properties-container">
+        <div class="property-inputs">
+          <input type="text" [(ngModel)]="newPropertyKey" placeholder="Property Key" name="propertyKey">
+          <input type="text" [(ngModel)]="newPropertyValue" placeholder="Property Value" name="propertyValue">
+          <button type="button" (click)="addProperty()">Add Property</button>
+        </div>
+        <div class="properties-list" *ngIf="message.properties && getPropertyKeys().length > 0">
+          <div class="property-item" *ngFor="let key of getPropertyKeys()">
+            <span class="property-key">{{key}}:</span>
+            <span class="property-value">{{message.properties[key]}}</span>
+            <button type="button" class="remove-property" (click)="removeProperty(key)">×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="btn btn-danger" [routerLink]="['/']">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!messageForm.form.valid">Send Message</button>
+    </div>
+  </form>
+</div> 

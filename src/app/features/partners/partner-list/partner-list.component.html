@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header">
+    <h2>Partners</h2>
+    <div class="buttons">
+      <button class="reload-button" (click)="loadPartners()">
+        <span class="reload-icon">↻</span> Reload
+      </button>
+      <button class="add-button" (click)="toggleForm()">
+        {{ showForm ? 'Hide Form' : 'Add New Partner' }}
+      </button>
+    </div>
+  </div>
+
+  <app-partner-form *ngIf="showForm"></app-partner-form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Alias</th>
+        <th>Type</th>
+        <th>Direction</th>
+        <th>Application</th>
+        <th>Flow Type</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let partner of partners">
+        <td>{{ partner.id }}</td>
+        <td>{{ partner.alias }}</td>
+        <td>{{ partner.type }}</td>
+        <td>{{ partner.direction }}</td>
+        <td>{{ partner.application }}</td>
+        <td>{{ partner.processedFlowType }}</td>
+        <td>{{ partner.description }}</td>
+        <td>
+          <button class="delete-button" (click)="deletePartner(partner.id)">
+            <span class="delete-icon">×</span> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
