@@ -20,7 +20,7 @@ export class PartnerService {
   }
 
   createPartner(partner: Partner): Observable<Partner> {
-    return this.http.post<Partner>(this.apiUrl, partner);
+    return this.http.post<Partner>(`${this.apiUrl}/create`, partner);
   }
 
   updatePartner(id: string, partner: Partner): Observable<Partner> {

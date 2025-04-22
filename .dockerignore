@@ -1,0 +1,21 @@
+# Node
+node_modules
+npm-debug.log
+
+# Build artifacts
+dist
+tmp
+
+# Git
+.git
+.gitignore
+
+# Editor/OS files
+.idea
+.vscode
+*.swp
+.DS_Store
+
+# Docker
+Dockerfile
+.dockerignore 

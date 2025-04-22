@@ -54,6 +54,23 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Running with Docker
+
+This project includes a `Dockerfile` to build and run the application in a container.
+
+1.  **Build the Docker image:**
+    ```bash
+    docker build -t ca-project-front .
+    ```
+
+2.  **Run the Docker container:**
+    ```bash
+    docker run -p 8080:80 ca-project-front
+    ```
+    This maps port 8080 on your host machine to port 80 inside the container.
+
+3.  Access the application in your browser at `http://localhost:8080`.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
